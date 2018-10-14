@@ -48,7 +48,8 @@ app.get("/scrape", function (req, res) {
                 });
         });
 
-        res.send("Scrape Complete");
+        //Redirect to homepage after scraping
+        res.redirect("/");
     });
 });
 
@@ -85,6 +86,7 @@ app.post("/articles/:id", function (req, res) {
             res.json(err);
         })
 });
+
 
 app.listen(PORT, function () {
     console.log(`Running on port ${PORT}!`);
